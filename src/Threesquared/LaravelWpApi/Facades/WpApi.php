@@ -1,4 +1,4 @@
-<?php namespace Cyberduck\LaravelWpApi\Facades;
+<?php namespace Threesquared\LaravelWpApi\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
