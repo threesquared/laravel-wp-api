@@ -31,7 +31,7 @@ class LaravelWpApiServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bindShared('wp-api', function ($app) {
+        $this->app->singleton(WpApi::class, function ($app) {
 
             $endpoint = $this->app['config']->get('wp-api.endpoint');
             $auth     = $this->app['config']->get('wp-api.auth');
@@ -39,10 +39,6 @@ class LaravelWpApiServiceProvider extends ServiceProvider
 
             return new WpApi($endpoint, $client, $auth);
 
-        });
-
-        $this->app->bind('Threesquared\LaravelWpApi\WpApi', function ($app) {
-            return $app['wp-api'];
         });
     }
 
