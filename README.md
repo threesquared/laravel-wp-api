@@ -12,11 +12,7 @@ Simply add the following line to your `composer.json` and run install/update:
 
 ## Configuration
 
-Publish the package config files to configure the location of your Wordpress install:
-
-    php artisan vendor:publish
-
-You will also need to add the service provider and optionally the facade alias to your `config/app.php`:
+You will need to add the service provider and optionally the facade alias to your `config/app.php`:
 
 ```php
 'providers' => array(
@@ -27,6 +23,10 @@ You will also need to add the service provider and optionally the facade alias t
   'WpApi' => Threesquared\LaravelWpApi\Facades\WpApi::class
 ),
 ```
+
+And publish the package config files to configure the location of your Wordpress install:
+
+    php artisan vendor:publish
 
 ### Usage
 
