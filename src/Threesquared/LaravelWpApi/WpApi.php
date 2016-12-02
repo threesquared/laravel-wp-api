@@ -61,6 +61,17 @@ class WpApi
     }
 
     /**
+     * Get post by id
+     *
+     * @param  int $id
+     * @return array
+     */
+    public function postId($id)
+    {
+        return $this->get("posts/$id");
+    }
+
+    /**
      * Get post by slug
      *
      * @param  string $slug
