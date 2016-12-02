@@ -51,6 +51,11 @@ WpApi::post($slug);
 
 ```
 
+```php
+WpApi::postId($id);
+
+```
+
 #### Categories
 ```php
 WpApi::categories();
