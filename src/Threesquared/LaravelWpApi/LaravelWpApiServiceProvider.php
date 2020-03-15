@@ -31,14 +31,11 @@ class LaravelWpApiServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(WpApi::class, function ($app) {
-
-            $endpoint = $this->app['config']->get('wp-api.endpoint');
-            $auth     = $this->app['config']->get('wp-api.auth');
-            $client   = $this->app->make('GuzzleHttp\Client');
-
-            return new WpApi($endpoint, $client, $auth);
-
+        $this->app->bind(WpApi::class, function ($app) {
+            return new WpApi(
+                $this->app['config']->get('wp-api.endpoint'),
+                $this->app['config']->get('wp-api.auth')
+            );
         });
     }
 
