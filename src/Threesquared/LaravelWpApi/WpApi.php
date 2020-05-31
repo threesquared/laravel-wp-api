@@ -31,11 +31,11 @@ class WpApi
      * @param Client $client
      * @param string $auth
      */
-    public function __construct($endpoint, Client $client, $auth = null)
+    public function __construct($endpoint, $auth = null)
     {
         $this->endpoint = $endpoint;
-        $this->client   = $client;
         $this->auth     = $auth;
+        $this->client   = new Client();
     }
 
     /**
@@ -100,7 +100,7 @@ class WpApi
      */
     public function categories()
     {
-        return $this->get('taxonomies/category/terms');
+        return $this->get('categories');
     }
 
     /**
